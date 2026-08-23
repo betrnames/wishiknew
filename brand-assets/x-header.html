@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1500px; height: 500px; overflow: hidden; }
+    body {
+      font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+      width: 1500px;
+      height: 500px;
+      color: #1a2332;
+      background:
+        radial-gradient(ellipse 55% 90% at 85% 50%, rgba(232, 164, 56, 0.28), transparent 55%),
+        radial-gradient(ellipse 40% 80% at 8% 80%, rgba(84, 120, 130, 0.12), transparent 50%),
+        linear-gradient(180deg, #fafaf9 0%, #f3f1ed 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    /* Safe content stays in ~1200×~280 center for X crop */
+    .safe {
+      width: 1180px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 780px;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .mark {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: #1a2332;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .mark svg { width: 30px; height: 30px; stroke: #fafaf9; }
+    h1 {
+      font-size: 56px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .tag {
+      font-size: 24px;
+      font-weight: 500;
+      color: #4b5563;
+      line-height: 1.35;
+      padding-left: 72px;
+    }
+    .tag strong { color: #d4922a; font-weight: 700; }
+    .domain {
+      padding-left: 72px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #6b7280;
+    }
+    .right {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .chip {
+      font-size: 16px;
+      font-weight: 600;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid #e5e2de;
+      color: #374151;
+      white-space: nowrap;
+    }
+    .chip.accent {
+      background: #d4922a;
+      border-color: #d4922a;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="safe">
+    <div class="left">
+      <div class="row">
+        <div class="mark" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+            <path d="m14 7 3 3" />
+            <path d="M5 6v4" /><path d="M19 14v4" /><path d="M10 2v2" />
+            <path d="M7 8H3" /><path d="M21 16h-4" /><path d="M11 3H9" />
+          </svg>
+        </div>
+        <h1>Wish I Knew</h1>
+      </div>
+      <p class="tag">What I wish I knew — <strong>stealable patterns</strong> for builders</p>
+      <p class="domain">wishiknew.lol</p>
+    </div>
+    <div class="right">
+      <span class="chip accent">BIP lessons</span>
+      <span class="chip">Not clones</span>
+    </div>
+  </div>
+</body>
+</html>

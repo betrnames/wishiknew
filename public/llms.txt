@@ -1,0 +1,33 @@
+# Wish I Knew
+
+> Build-in-public postmortems turned into stealable patterns.
+> Site: https://wishiknew.lol
+
+## Summary
+
+Wish I Knew (wishiknew.lol) is an editorial feed of indie-scale launches and patterns — projects a solo builder could have shipped — framed as "what I wish I knew," plus concrete ship-this-week steps. No unicorn IDE / voice-lab tier. Heat is editorial among peers, not live MRR or virality APIs. Tone matches r/indiehackers and build-in-public culture.
+
+## Primary pages
+
+- / - Main feed (lessons + patterns), Wish I knew tip form, category filters
+- /llms.txt - This file
+
+## Product
+
+- Audience: indie hackers, bootstrappers, AI builders, domain investors
+- Core loop: browse ranked lessons -> expand "what I'd do differently" -> steal the pattern -> optionally Visit the product
+- Contributions: "Wish I knew about..." tip form via Formspree (curated, not auto-published)
+- Ranking: sorted by editorial heat (blazing -> steady), not a live virality API
+
+## Affiliate note
+
+Some Visit links are marked Affiliate when the product has a known partner program. Destination URLs may be official landers or tracked affiliate links. Commissions (if any) do not change the price for the buyer.
+
+## Optional / archived
+
+- Meme lab (regret to meme) exists in the codebase as an archived side mode; it is not linked from the main product UI.
+
+## Contact
+
+- Tips: on-site Wish I knew about... form
+- Domain: wishiknew.lol

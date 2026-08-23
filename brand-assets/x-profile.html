@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 400px; height: 400px; overflow: hidden; }
+    body {
+      font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+      width: 400px;
+      height: 400px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(232, 164, 56, 0.35), transparent 45%),
+        radial-gradient(circle at 75% 80%, rgba(84, 120, 130, 0.12), transparent 40%),
+        #f7f5f2;
+    }
+    .card {
+      width: 280px;
+      height: 280px;
+      border-radius: 64px;
+      background: #fff;
+      border: 2px solid #e8e4de;
+      box-shadow: 0 8px 28px rgba(26, 35, 50, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+    .mark {
+      width: 96px;
+      height: 96px;
+      border-radius: 28px;
+      background: #1a2332;
+      display: grid;
+      place-items: center;
+    }
+    .mark svg { width: 52px; height: 52px; stroke: #fafaf9; }
+    .initials {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #1a2332;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #d4922a;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+        <path d="m14 7 3 3" />
+        <path d="M5 6v4" /><path d="M19 14v4" /><path d="M10 2v2" />
+        <path d="M7 8H3" /><path d="M21 16h-4" /><path d="M11 3H9" />
+      </svg>
+    </div>
+    <div class="initials">WIK</div>
+    <div class="dot" aria-hidden="true"></div>
+  </div>
+</body>
+</html>
