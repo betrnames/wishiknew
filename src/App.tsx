@@ -474,6 +474,22 @@ function App() {
             <span>© {new Date().getFullYear()} Wish I Knew · wishiknew.lol</span>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
               <a
+                href="https://x.com/wishiknew_lol"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 underline-offset-2 hover:text-foreground hover:underline"
+                aria-label="Wish I Knew on X"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  className="size-3.5 fill-current"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.227-8.451L1.99 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
+                </svg>
+                @wishiknew_lol
+              </a>
+              <a
                 href="/llms.txt"
                 target="_blank"
                 rel="noopener noreferrer"
