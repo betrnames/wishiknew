@@ -12,17 +12,15 @@
       font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
       width: 1500px;
       height: 500px;
-      color: #1a2332;
+      color: #cfcfcf;
       background:
-        radial-gradient(ellipse 55% 90% at 85% 50%, rgba(232, 164, 56, 0.28), transparent 55%),
-        radial-gradient(ellipse 40% 80% at 8% 80%, rgba(84, 120, 130, 0.12), transparent 50%),
-        linear-gradient(180deg, #fafaf9 0%, #f3f1ed 100%);
+        radial-gradient(ellipse 55% 90% at 85% 50%, rgba(232, 168, 74, 0.24), transparent 55%),
+        radial-gradient(ellipse 40% 80% at 8% 80%, rgba(80, 140, 150, 0.12), transparent 50%),
+        linear-gradient(180deg, #1c1c1f 0%, #141416 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
     }
-    /* Safe content stays in ~1200×~280 center for X crop */
     .safe {
       width: 1180px;
       display: flex;
@@ -45,31 +43,34 @@
       width: 56px;
       height: 56px;
       border-radius: 16px;
-      background: #1a2332;
+      background: #141416;
+      border: 1.5px solid #333336;
       display: grid;
       place-items: center;
       flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
     }
-    .mark svg { width: 30px; height: 30px; stroke: #fafaf9; }
+    .mark svg { width: 30px; height: 30px; stroke: #e8a84a; }
     h1 {
       font-size: 56px;
       font-weight: 800;
       letter-spacing: -0.04em;
       line-height: 1;
+      color: #f2f2f2;
     }
     .tag {
       font-size: 24px;
       font-weight: 500;
-      color: #4b5563;
+      color: #9a9a9e;
       line-height: 1.35;
       padding-left: 72px;
     }
-    .tag strong { color: #d4922a; font-weight: 700; }
+    .tag strong { color: #e8a84a; font-weight: 700; }
     .domain {
       padding-left: 72px;
       font-size: 18px;
       font-weight: 600;
-      color: #6b7280;
+      color: #8a8a8e;
     }
     .right {
       display: flex;
@@ -81,15 +82,15 @@
       font-weight: 600;
       padding: 12px 18px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid #e5e2de;
-      color: #374151;
+      background: rgba(20, 20, 22, 0.85);
+      border: 1px solid #333336;
+      color: #cfcfcf;
       white-space: nowrap;
     }
     .chip.accent {
-      background: #d4922a;
-      border-color: #d4922a;
-      color: #fff;
+      background: #e8a84a;
+      border-color: #e8a84a;
+      color: #1c1c1f;
     }
   </style>
 </head>

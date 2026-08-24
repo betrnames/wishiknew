@@ -1,10 +1,13 @@
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import {
+  Check,
   ExternalLink,
   Flame,
   Lightbulb,
+  Link2,
   ListChecks,
   Search,
+  Share2,
 } from "lucide-react"
 
 import { Logo } from "@/components/Logo"
@@ -22,6 +25,7 @@ import {
   type Launch,
   type LaunchCategory,
 } from "@/lib/launches"
+import { copyLessonLink, lessonShareUrl, openShareOnX } from "@/lib/share"
 import { cn } from "@/lib/utils"
 
 /** Fill % from bottom — editorial temperature, not live metrics */
@@ -82,6 +86,14 @@ function LaunchRow({
   onToggle: () => void
   onHeat: () => void
 }) {
+  const [copied, setCopied] = useState(false)
+
+  async function onCopyLink() {
+    await copyLessonLink(item.id)
+    setCopied(true)
+    window.setTimeout(() => setCopied(false), 1600)
+  }
+
   return (
     <article
       className={cn(
@@ -150,6 +162,23 @@ function LaunchRow({
                 )}
               </a>
             )}
+            <button
+              type="button"
+              onClick={() => openShareOnX(item)}
+              className="inline-flex items-center gap-1 font-medium text-muted-foreground hover:text-foreground"
+              title="Share on X"
+            >
+              <Share2 className="size-3" /> Share on X
+            </button>
+            <button
+              type="button"
+              onClick={onCopyLink}
+              className="inline-flex items-center gap-1 hover:text-foreground"
+              title={lessonShareUrl(item.id)}
+            >
+              {copied ? <Check className="size-3 text-primary" /> : <Link2 className="size-3" />}
+              {copied ? "Copied" : "Copy link"}
+            </button>
           </div>
         </div>
 
@@ -213,6 +242,27 @@ function LaunchRow({
               Steal the <span className="font-medium text-foreground">{item.pattern}</span> pattern —
               don’t clone the exact product.
             </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <Button
+                type="button"
+                size="sm"
+                variant="outline"
+                className="h-8 gap-1.5 text-xs"
+                onClick={() => openShareOnX(item)}
+              >
+                <Share2 className="size-3.5" /> Share this lesson on X
+              </Button>
+              <Button
+                type="button"
+                size="sm"
+                variant="ghost"
+                className="h-8 gap-1.5 text-xs text-muted-foreground"
+                onClick={onCopyLink}
+              >
+                {copied ? <Check className="size-3.5 text-primary" /> : <Link2 className="size-3.5" />}
+                {copied ? "Link copied" : "Copy shareable link"}
+              </Button>
+            </div>
           </div>
         </div>
       )}
@@ -225,6 +275,25 @@ function App() {
   const [query, setQuery] = useState("")
   const [expandedId, setExpandedId] = useState<string | null>(LAUNCHES[0]?.id ?? null)
   const [heated, setHeated] = useState<Record<string, boolean>>({})
+
+  /** Deep link + search params for shareable / AEO URLs */
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const q = params.get("q")
+    if (q) setQuery(q)
+    const id = params.get("l") || window.location.hash.replace(/^#/, "")
+    if (!id) return
+    const match = LAUNCHES.find((x) => x.id === id)
+    if (!match) return
+    setExpandedId(match.id)
+    setFilter("all")
+    window.requestAnimationFrame(() => {
+      document.getElementById(`lesson-${match.id}`)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    })
+  }, [])
 
   const feed = useMemo(() => {
     let items = filter === "all" ? [...LAUNCHES] : LAUNCHES.filter((i) => i.category === filter)
@@ -321,20 +390,28 @@ function App() {
               <p className="p-8 text-center text-sm text-muted-foreground">No lessons match that filter.</p>
             ) : (
               feed.map((item, index) => (
-                <LaunchRow
-                  key={item.id}
-                  item={item}
-                  rank={index + 1}
-                  striped={index % 2 === 1}
-                  expanded={expandedId === item.id}
-                  heated={!!heated[item.id]}
-                  onToggle={() =>
-                    setExpandedId((id) => (id === item.id ? null : item.id))
-                  }
-                  onHeat={() =>
-                    setHeated((prev) => ({ ...prev, [item.id]: !prev[item.id] }))
-                  }
-                />
+                <div key={item.id} id={`lesson-${item.id}`} className="scroll-mt-20">
+                  <LaunchRow
+                    item={item}
+                    rank={index + 1}
+                    striped={index % 2 === 1}
+                    expanded={expandedId === item.id}
+                    heated={!!heated[item.id]}
+                    onToggle={() => {
+                      setExpandedId((id) => {
+                        const next = id === item.id ? null : item.id
+                        const url = new URL(window.location.href)
+                        if (next) url.searchParams.set("l", next)
+                        else url.searchParams.delete("l")
+                        window.history.replaceState({}, "", url.toString())
+                        return next
+                      })
+                    }}
+                    onHeat={() =>
+                      setHeated((prev) => ({ ...prev, [item.id]: !prev[item.id] }))
+                    }
+                  />
+                </div>
               ))
             )}
           </div>

@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Generative / answer engines
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://wishiknew.lol/sitemap.xml
+LLMs: https://wishiknew.lol/llms.txt

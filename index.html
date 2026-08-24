@@ -3,29 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <meta name="theme-color" content="#1c1c1f" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Merriweather:wght@400;700&family=Outfit:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Wish I Knew — what I wish I knew</title>
+    <title>Wish I Knew — what I wish I knew | indie launch patterns</title>
     <meta
       name="description"
-      content="Build-in-public postmortems turned into stealable patterns for indie hackers. What worked, what I wish I knew, ship this week."
+      content="Indie-hacker lessons from fast launches like outbid.lol: what worked, what I wish I knew, and ship-this-week patterns. Stealable playbooks — not clones. Shareable links for every lesson."
     />
+    <meta
+      name="keywords"
+      content="wish i knew, indie hacker, build in public, outbid.lol, micro saas, MRR, ARR, startup patterns, missed boat, ship this week"
+    />
+    <meta name="author" content="Wish I Knew" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://wishiknew.lol/" />
+    <link rel="alternate" type="text/plain" href="https://wishiknew.lol/llms.txt" title="llms.txt" />
     <meta property="og:site_name" content="Wish I Knew" />
     <meta property="og:title" content="Wish I Knew — what I wish I knew" />
     <meta
       property="og:description"
-      content="An indie-hacker feed of launches and lessons: stealable patterns, not clones. Built for builders."
+      content="Indie launch postmortems turned into stealable patterns. Case studies like outbid.lol (~$132k by day 3). Built for builders."
     />
     <meta property="og:url" content="https://wishiknew.lol/" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:image" content="https://wishiknew.lol/og.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
@@ -35,10 +44,101 @@
     <meta name="twitter:title" content="Wish I Knew — wishiknew.lol" />
     <meta
       name="twitter:description"
-      content="Build-in-public postmortems → stealable patterns. What I wish I knew."
+      content="What I wish I knew: indie patterns from outbid.lol, Photo AI, TrustMRR & more. Steal the pattern — don't clone."
     />
     <meta name="twitter:image" content="https://wishiknew.lol/og.png" />
     <meta name="twitter:image:alt" content="Wish I Knew — What I wish I knew" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://wishiknew.lol/#website",
+            "url": "https://wishiknew.lol/",
+            "name": "Wish I Knew",
+            "description": "Indie-hacker feed of launches and patterns you wish you'd seen sooner.",
+            "inLanguage": "en",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://wishiknew.lol/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://wishiknew.lol/#org",
+            "name": "Wish I Knew",
+            "url": "https://wishiknew.lol/",
+            "logo": "https://wishiknew.lol/favicon-512.png"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://wishiknew.lol/#lessons",
+            "name": "What I wish I knew — indie launch lessons",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "outbid.lol",
+                "url": "https://wishiknew.lol/?l=outbid",
+                "description": "Pay-to-rank leaderboard that reported ~$132k revenue by day 3. Pattern: Joke domain = MVP."
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "TrustMRR",
+                "url": "https://wishiknew.lol/?l=trustmrr",
+                "description": "Verified MRR board that sold sponsor spots to ~$18k MRR in 5 days."
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "fly.pieter.com",
+                "url": "https://wishiknew.lol/?l=fly-pieter",
+                "description": "Browser flight sim monetized with in-game ads — $0 to $1M ARR run-rate in 17 days."
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Photo AI",
+                "url": "https://wishiknew.lol/?l=photoai",
+                "description": "Before/after AI photoshoot SaaS — solo founder screenshot playbook."
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Wish I Knew?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Wish I Knew is an editorial feed of indie-scale launches and patterns framed as what I wish I knew — with concrete ship-this-week steps. Heat ranks lessons editorially, not by live virality APIs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How fast did outbid.lol make money?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Per founder Jonathan Wilke's X updates after the Aug 19, 2026 launch: about $21.5k and 200k+ visitors in ~24 hours, about $42k and 1M+ visitors at ~36 hours, and about $132k revenue with a $14k top bid by day 3."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I share a lesson?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Every lesson has a shareable URL like https://wishiknew.lol/?l=outbid and a Share on X button that opens a prefilled post."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

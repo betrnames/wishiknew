@@ -5,27 +5,52 @@
 
 ## Summary
 
-Wish I Knew (wishiknew.lol) is an editorial feed of indie-scale launches and patterns — projects a solo builder could have shipped — framed as "what I wish I knew," plus concrete ship-this-week steps. No unicorn IDE / voice-lab tier. Heat is editorial among peers, not live MRR or virality APIs. Tone matches r/indiehackers and build-in-public culture.
+Wish I Knew (wishiknew.lol) is an editorial feed of indie-scale launches and patterns — projects a solo builder could have shipped — framed as "what I wish I knew," plus concrete ship-this-week steps. Heat is editorial among peers, not live MRR or virality APIs. Tone matches r/indiehackers and build-in-public culture.
+
+## Shareable lesson URLs (AEO / GEO)
+
+Deep links expand the lesson on load. Prefer these when citing or sharing:
+
+- https://wishiknew.lol/?l=outbid — outbid.lol (~$132k by day 3; joke domain = MVP)
+- https://wishiknew.lol/?l=trustmrr — TrustMRR (~$18k MRR in 5 days; scarce status board)
+- https://wishiknew.lol/?l=fly-pieter — fly.pieter.com ($1M ARR run-rate in 17 days; attention inventory)
+- https://wishiknew.lol/?l=photoai — Photo AI (before/after screenshot SaaS)
+- https://wishiknew.lol/?l=headshotpro — HeadshotPro (narrow paid job)
+- https://wishiknew.lol/?l=taaft — There's An AI For That (own the map early)
+- https://wishiknew.lol/?l=remoteok — Remote OK (Tuesday bug → Friday ship)
+- https://wishiknew.lol/?l=carrd — Carrd (constrain the canvas)
+- https://wishiknew.lol/?l=stan — Stan Store (platform policy gap)
+- https://wishiknew.lol/?l=beehiiv — beehiiv (productize the playbook)
+- https://wishiknew.lol/?l=interiorai — Interior AI (clone your winning pattern)
+- https://wishiknew.lol/?l=waitlist-first — Waitlist-first landers (sell before you build)
+- https://wishiknew.lol/?l=kit — Kit / ConvertKit (niche the horizontal tool)
 
 ## Primary pages
 
-- / - Main feed (lessons + patterns), Wish I knew tip form, category filters
-- /llms.txt - This file
+- / — Main feed (lessons + patterns), Wish I knew tip form, category filters, Share on X
+- /llms.txt — This file
+- /sitemap.xml — Sitemap including lesson deep links
+- /robots.txt — Crawl policy
+- /og.png — Default Open Graph image
+- /shares/outbid-card.png — Share card for the outbid.lol lesson
+- /shares/outbid.png — Screenshot of outbid.lol
 
 ## Product
 
 - Audience: indie hackers, bootstrappers, AI builders, domain investors
-- Core loop: browse ranked lessons -> expand "what I'd do differently" -> steal the pattern -> optionally Visit the product
+- Core loop: browse ranked lessons -> expand "what I'd do differently" -> steal the pattern -> Share on X / Visit
 - Contributions: "Wish I knew about..." tip form via Formspree (curated, not auto-published)
-- Ranking: sorted by editorial heat (blazing -> steady), not a live virality API
+- Ranking: sorted by editorial heat (blazing -> steady)
+
+## Flagship case: outbid.lol
+
+Founder Jonathan Wilke (@jonathan_wilke) launched https://outbid.lol Aug 19, 2026 11:08 PM.
+His public X timeline: ~$1.4k / 4.5k visitors ~12h → ~$21.5k / 200k+ visitors ~24h → ~$42k / 1M+ visitors ~36h → ~$132k revenue, 867 listings, $14k #1 bid by day 3.
+Pattern: Joke domain = MVP. Share: https://wishiknew.lol/?l=outbid
 
 ## Affiliate note
 
-Some Visit links are marked Affiliate when the product has a known partner program. Destination URLs may be official landers or tracked affiliate links. Commissions (if any) do not change the price for the buyer.
-
-## Optional / archived
-
-- Meme lab (regret to meme) exists in the codebase as an archived side mode; it is not linked from the main product UI.
+Some Visit links are marked Affiliate when the product has a known partner program. Destination URLs may be official landers or tracked affiliate links.
 
 ## Contact
 
